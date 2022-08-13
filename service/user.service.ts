@@ -1,7 +1,6 @@
 import { omit } from "lodash";
 import { FilterQuery } from "mongoose";
 import UserModel, { UserDocument, UserInput } from "../model/user.model";
-import log from "../utils/logger"
 
 export const createUser = async (userInput: UserInput) => {
     try{
@@ -18,7 +17,6 @@ export const verifyPassword = async ({email, password}: {email: string, password
         return false
     }
     const isValid = await user.comparePassword(password)
-    log.info(`IsValid is ${isValid}`)
     if(!isValid){
         return false
     }

@@ -1,4 +1,4 @@
-import mongoose, { FilterQuery, UpdateQuery } from "mongoose";
+import { FilterQuery, UpdateQuery } from "mongoose";
 import ProductModel, { ProductDocument, ProductInput } from "../model/product.model";
 
 export const createProduct = async (input: ProductInput, user: string) => {
