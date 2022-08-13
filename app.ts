@@ -3,10 +3,13 @@ import connectDb from "./utils/connect"
 import config from "config"
 import log from "./utils/logger"
 import routes from "./routes"
+import deserializeUser from "./middleware/deserializeUser"
 
 const app = express()
 
 app.use(express.json())
+
+app.use(deserializeUser)
 
 const port = config.get<number>("port")
 

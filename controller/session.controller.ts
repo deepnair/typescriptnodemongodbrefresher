@@ -37,7 +37,8 @@ export const getSessionsHandler = async (req: Request, res: Response) => {
 }
 
 export const logoutSessionHandler = async (req: Request, res: Response) => {
-    const user = res.locals.user._id
-    const newSession = await updateSession({_id: user.session}, {valid: false})
+    const user = res.locals.user.session
+    const newSession = await updateSession({_id: user}, {valid: false})
+    log.info(newSession)
     return res.send({accessToken: null, refreshToken: null})
 }

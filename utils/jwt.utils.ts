@@ -25,7 +25,7 @@ export const verifyJwt = (token:string) => {
         log.error(e)
         return{
             valid: false,
-            expire: e.message === 'jwt expired',
+            expired: e.message === 'jwt expired',
             decoded: null
         }
     }

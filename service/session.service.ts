@@ -20,7 +20,7 @@ export const getSessions = async (query: FilterQuery<SessionDocument>) => {
 }
 
 export const updateSession = async (query: FilterQuery<SessionDocument>, update: UpdateQuery<SessionDocument>) => {
-    return SessionModel.updateOne(query, update, {new:true}).lean()
+    return SessionModel.updateOne(query, update)
 }
 
 export const reIssueAccessToken = async (refreshToken: string) => {
