@@ -16,7 +16,7 @@ export const createProductHandler = async (req: Request<{}, {}, ProductInput>, r
         const userId:string = res.locals.user._id
         if(userId){
             const product = await createProduct(req.body, userId)
-            res.send(product)
+            res.status(201).send(product)
         }else{
             res.status(400).send('No userId found in res.locals.user._id')
         }
