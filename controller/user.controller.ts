@@ -9,6 +9,6 @@ export const createUserHandler = async (req: Request<{}, {}, UserInput>, res: Re
             res.status(201).send(user)
         }
     }catch(e:any){
-        res.status(403).send(e)
+        res.status(400).send(e)
     }
 }
